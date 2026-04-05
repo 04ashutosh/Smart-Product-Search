@@ -1,0 +1,502 @@
+[
+  {
+    "id": "1",
+    "name": "TechCorp X100 Smartphone",
+    "description": "Latest 5G smartphone with 120Hz OLED display, 256GB storage, and advanced triple camera system.",
+    "category": "Electronics",
+    "price": 899.99,
+    "rating": 4.7,
+    "brand": "TechCorp",
+    "availability": true
+  },
+  {
+    "id": "2",
+    "name": "NexaBook Pro 15",
+    "description": "High-performance laptop featuring a 16-core processor, 32GB RAM, and a stunning 4K screen for creators.",
+    "category": "Electronics",
+    "price": 1999.00,
+    "rating": 4.8,
+    "brand": "Nexa",
+    "availability": true
+  },
+  {
+    "id": "3",
+    "name": "SoundMax Noise Cancelling Headphones",
+    "description": "Over-ear wireless headphones with industry-leading active noise cancellation and 30-hour battery life.",
+    "category": "Electronics",
+    "price": 249.99,
+    "rating": 4.5,
+    "brand": "SoundMax",
+    "availability": true
+  },
+  {
+    "id": "4",
+    "name": "AeroFit Smartwatch",
+    "description": "Water-resistant smartwatch with heart-rate tracking, GPS, and custom watch faces.",
+    "category": "Electronics",
+    "price": 149.50,
+    "rating": 4.3,
+    "brand": "Aero",
+    "availability": false
+  },
+  {
+    "id": "5",
+    "name": "StreamBox 4K Media Player",
+    "description": "Transform your TV into a smart TV with 4K UHD streaming, voice remote, and thousands of apps.",
+    "category": "Electronics",
+    "price": 69.99,
+    "rating": 4.6,
+    "brand": "VividStream",
+    "availability": true
+  },
+  {
+    "id": "6",
+    "name": "ErgoPlus Office Chair",
+    "description": "Ergonomic office chair with breathable mesh back, adjustable lumbar support, and 3D armrests.",
+    "category": "Furniture",
+    "price": 299.00,
+    "rating": 4.4,
+    "brand": "OfficePro",
+    "availability": true
+  },
+  {
+    "id": "7",
+    "name": "Minimalist Oak Dining Table",
+    "description": "A stylish, solid oak dining table that seats six. Perfect for modern living spaces.",
+    "category": "Furniture",
+    "price": 549.99,
+    "rating": 4.8,
+    "brand": "HomeHaven",
+    "availability": true
+  },
+  {
+    "id": "8",
+    "name": "Velvet Lounge Sofa",
+    "description": "Deep blue velvet three-seater sofa with gold-finished legs for a touch of luxury.",
+    "category": "Furniture",
+    "price": 899.00,
+    "rating": 4.7,
+    "brand": "LuxeLiving",
+    "availability": false
+  },
+  {
+    "id": "9",
+    "name": "Adjustable Standing Desk",
+    "description": "Electric height adjustable desk with dual motors and programmable memory presets.",
+    "category": "Furniture",
+    "price": 389.50,
+    "rating": 4.6,
+    "brand": "OfficePro",
+    "availability": true
+  },
+  {
+    "id": "10",
+    "name": "Chef's Classic Stainless Steel Cookware Set",
+    "description": "10-piece professional-grade stainless steel cookware set suitable for all stovetops including induction.",
+    "category": "Home & Kitchen",
+    "price": 199.99,
+    "rating": 4.5,
+    "brand": "Culina",
+    "availability": true
+  },
+  {
+    "id": "11",
+    "name": "Smart Coffee Maker",
+    "description": "Wi-Fi enabled coffee maker. Schedule your morning brew from your smartphone.",
+    "category": "Home & Kitchen",
+    "price": 129.00,
+    "rating": 4.2,
+    "brand": "Breva",
+    "availability": true
+  },
+  {
+    "id": "12",
+    "name": "Ultra-Powerful Blender",
+    "description": "High-speed blender perfect for smoothies, soups, and crushing ice with a 1500W motor.",
+    "category": "Home & Kitchen",
+    "price": 159.95,
+    "rating": 4.7,
+    "brand": "NutriBlend",
+    "availability": true
+  },
+  {
+    "id": "13",
+    "name": "Men's Classic Wool Peacoat",
+    "description": "Timeless heavy wool blend peacoat. Keeps you warm during freezing winters while looking tailored.",
+    "category": "Clothing",
+    "price": 185.00,
+    "rating": 4.6,
+    "brand": "Urbane",
+    "availability": true
+  },
+  {
+    "id": "14",
+    "name": "Women's Lightweight Running Jacket",
+    "description": "Water-resistant, reflective running jacket with breathable mesh panels for intense workouts.",
+    "category": "Clothing",
+    "price": 75.00,
+    "rating": 4.4,
+    "brand": "Aero",
+    "availability": true
+  },
+  {
+    "id": "15",
+    "name": "Unisex Cotton Crewneck T-Shirt",
+    "description": "Premium 100% organic cotton everyday t-shirt available in multiple pastel colors.",
+    "category": "Clothing",
+    "price": 25.00,
+    "rating": 4.8,
+    "brand": "EcoWear",
+    "availability": true
+  },
+  {
+    "id": "16",
+    "name": "Leather Chelsea Boots",
+    "description": "Handcrafted genuine leather Chelsea boots with durable elastic side panels and supportive soles.",
+    "category": "Shoes",
+    "price": 140.00,
+    "rating": 4.7,
+    "brand": "StepRight",
+    "availability": false
+  },
+  {
+    "id": "17",
+    "name": "Pro Runner X Sneakers",
+    "description": "Lightweight athletic sneakers featuring responsive foam cushioning for long-distance runs.",
+    "category": "Shoes",
+    "price": 120.00,
+    "rating": 4.5,
+    "brand": "Aero",
+    "availability": true
+  },
+  {
+    "id": "18",
+    "name": "The Great Gatsby - Hardcover",
+    "description": "A beautifully bound classic novel exploring the roaring twenties and the American Dream.",
+    "category": "Books",
+    "price": 20.00,
+    "rating": 4.9,
+    "brand": "Penguin Classics",
+    "availability": true
+  },
+  {
+    "id": "19",
+    "name": "Learn React Now",
+    "description": "A comprehensive guide to building modern web applications using React, Hooks, and Redux.",
+    "category": "Books",
+    "price": 45.99,
+    "rating": 4.6,
+    "brand": "TechPress",
+    "availability": true
+  },
+  {
+    "id": "20",
+    "name": "Mastering Spring Boot",
+    "description": "In-depth book covering dependency injection, microservices architecture, and Spring Data.",
+    "category": "Books",
+    "price": 55.00,
+    "rating": 4.8,
+    "brand": "TechPress",
+    "availability": true
+  },
+  {
+    "id": "21",
+    "name": "Eco-Friendly Yoga Mat",
+    "description": "Non-slip alignment lines, sustainable TPE material, extra thick for joint support.",
+    "category": "Sports & Outdoors",
+    "price": 40.00,
+    "rating": 4.5,
+    "brand": "ZenCore",
+    "availability": true
+  },
+  {
+    "id": "22",
+    "name": "Adjustable Dumbbell Set",
+    "description": "Space-saving adjustable dumbbells going from 5 to 52.5 lbs each with a simple dial turn.",
+    "category": "Sports & Outdoors",
+    "price": 349.99,
+    "rating": 4.8,
+    "brand": "IronFlex",
+    "availability": true
+  },
+  {
+    "id": "23",
+    "name": "4-Person Camping Tent",
+    "description": "Spacious, waterproof dome tent with a quick 5-minute setup and excellent ventilation.",
+    "category": "Sports & Outdoors",
+    "price": 129.50,
+    "rating": 4.2,
+    "brand": "TrailBlazer",
+    "availability": true
+  },
+  {
+    "id": "24",
+    "name": "Organic Green Tea Extract",
+    "description": "Antioxidant-rich organic green tea supplements for energy and metabolism boost. 60 capsules.",
+    "category": "Health & Beauty",
+    "price": 18.99,
+    "rating": 4.3,
+    "brand": "PureHealth",
+    "availability": true
+  },
+  {
+    "id": "25",
+    "name": "Hydrating Facial Serum",
+    "description": "Hyaluronic acid facial serum optimized for deep hydration and reducing fine lines.",
+    "category": "Health & Beauty",
+    "price": 28.50,
+    "rating": 4.7,
+    "brand": "GlowNaturals",
+    "availability": true
+  },
+  {
+    "id": "26",
+    "name": "Electric Toothbrush Pro",
+    "description": "Rechargeable electric toothbrush with 3 cleaning modes and built-in timer.",
+    "category": "Health & Beauty",
+    "price": 59.99,
+    "rating": 4.6,
+    "brand": "SmileBright",
+    "availability": true
+  },
+  {
+    "id": "27",
+    "name": "Wireless Gaming Mouse",
+    "description": "Ultra-lightweight gaming mouse with RGB lighting, 20K DPI optical sensor, and low latency.",
+    "category": "Electronics",
+    "price": 79.99,
+    "rating": 4.8,
+    "brand": "TechCorp",
+    "availability": true
+  },
+  {
+    "id": "28",
+    "name": "Mechanical Keyboard Blue Switches",
+    "description": "Tactile and clicky mechanical keyboard perfect for typists and gamers alike. Backlit keys.",
+    "category": "Electronics",
+    "price": 89.95,
+    "rating": 4.5,
+    "brand": "KeyMaster",
+    "availability": false
+  },
+  {
+    "id": "29",
+    "name": "27-inch 4K Monitor",
+    "description": "High-color accuracy IPS display with HDR10 support, ideal for graphic designers.",
+    "category": "Electronics",
+    "price": 349.00,
+    "rating": 4.7,
+    "brand": "VividStream",
+    "availability": true
+  },
+  {
+    "id": "30",
+    "name": "Dual Screen Monitor Mount",
+    "description": "Gas spring dual monitor arm adjusting to various heights and angles for an ergonomic setup.",
+    "category": "Office Supplies",
+    "price": 65.00,
+    "rating": 4.4,
+    "brand": "OfficePro",
+    "availability": true
+  },
+  {
+    "id": "31",
+    "name": "Premium Fountain Pen",
+    "description": "Elegant gold-plated fountain pen with smooth ink flow. Comes in a luxury gift box.",
+    "category": "Office Supplies",
+    "price": 85.00,
+    "rating": 4.9,
+    "brand": "InkCraft",
+    "availability": true
+  },
+  {
+    "id": "32",
+    "name": "A5 Leather Journal",
+    "description": "Refillable leather-bound notebook with thick 100gsm acid-free paper.",
+    "category": "Office Supplies",
+    "price": 24.50,
+    "rating": 4.8,
+    "brand": "InkCraft",
+    "availability": true
+  },
+  {
+    "id": "33",
+    "name": "Robot Vacuum Cleaner",
+    "description": "Smart mapping robot vacuum taking care of pet hair, dust, and hard floors automatically.",
+    "category": "Home & Kitchen",
+    "price": 299.00,
+    "rating": 4.5,
+    "brand": "HomeHaven",
+    "availability": true
+  },
+  {
+    "id": "34",
+    "name": "Air Purifier HEPA",
+    "description": "Eliminates 99.97% of airborne particles. Perfect for allergy sufferers and large living rooms.",
+    "category": "Home & Kitchen",
+    "price": 149.99,
+    "rating": 4.6,
+    "brand": "PureHealth",
+    "availability": true
+  },
+  {
+    "id": "35",
+    "name": "Ceramic Mug Set (4-Pack)",
+    "description": "Minimalist matte finish ceramic mugs, perfect for coffee, tea, and hot chocolate.",
+    "category": "Home & Kitchen",
+    "price": 28.00,
+    "rating": 4.7,
+    "brand": "Culina",
+    "availability": true
+  },
+  {
+    "id": "36",
+    "name": "Stainless Steel Water Bottle",
+    "description": "Double-wall vacuum insulated water bottle holding cold liquids for 24h or hot for 12h.",
+    "category": "Sports & Outdoors",
+    "price": 22.00,
+    "rating": 4.8,
+    "brand": "TrailBlazer",
+    "availability": true
+  },
+  {
+    "id": "37",
+    "name": "Resistance Bands Set",
+    "description": "5 color-coded stackable exercise bands with handles, ankle straps, and door anchor.",
+    "category": "Sports & Outdoors",
+    "price": 29.99,
+    "rating": 4.4,
+    "brand": "IronFlex",
+    "availability": false
+  },
+  {
+    "id": "38",
+    "name": "Men's Polarized Sunglasses",
+    "description": "100% UV protection sunglasses offering high clarity and glare reduction for driving.",
+    "category": "Accessories",
+    "price": 55.00,
+    "rating": 4.6,
+    "brand": "VisionPlus",
+    "availability": true
+  },
+  {
+    "id": "39",
+    "name": "Canvas Backpack",
+    "description": "Durable vintage canvas backpack with multiple compartments and a 15-inch laptop sleeve.",
+    "category": "Accessories",
+    "price": 45.00,
+    "rating": 4.5,
+    "brand": "Urbane",
+    "availability": true
+  },
+  {
+    "id": "40",
+    "name": "Leather Wallet Bifold",
+    "description": "Classic genuine leather bifold wallet with RFID blocking technology.",
+    "category": "Accessories",
+    "price": 38.00,
+    "rating": 4.7,
+    "brand": "StepRight",
+    "availability": true
+  },
+  {
+    "id": "41",
+    "name": "Bluetooth Portable Speaker",
+    "description": "Compact waterproof speaker offering 360-degree sound and 12-hour playtime.",
+    "category": "Electronics",
+    "price": 49.99,
+    "rating": 4.4,
+    "brand": "SoundMax",
+    "availability": true
+  },
+  {
+    "id": "42",
+    "name": "Digital SLR Camera",
+    "description": "24MP APS-C sensor camera ideal for beginners stepping up their photography game.",
+    "category": "Electronics",
+    "price": 550.00,
+    "rating": 4.7,
+    "brand": "TechCorp",
+    "availability": true
+  },
+  {
+    "id": "43",
+    "name": "Action Camera 4K",
+    "description": "Rugged, waterproof action camera with image stabilization. Includes mounting accessories.",
+    "category": "Electronics",
+    "price": 199.95,
+    "rating": 4.6,
+    "brand": "VividStream",
+    "availability": false
+  },
+  {
+    "id": "44",
+    "name": "Board Game - Strategic Settlers",
+    "description": "A classic strategy board game of resource gathering, trading, and building. 3-4 players.",
+    "category": "Toys & Games",
+    "price": 44.99,
+    "rating": 4.8,
+    "brand": "PlayTime",
+    "availability": true
+  },
+  {
+    "id": "45",
+    "name": "1000 Piece Jigsaw Puzzle",
+    "description": "High-quality, challenging jigsaw puzzle featuring a beautiful landscape image.",
+    "category": "Toys & Games",
+    "price": 19.99,
+    "rating": 4.3,
+    "brand": "PlayTime",
+    "availability": true
+  },
+  {
+    "id": "46",
+    "name": "Building Blocks Creator Set",
+    "description": "Unleash creativity with this 500-piece classic colorful building blocks basic set.",
+    "category": "Toys & Games",
+    "price": 34.00,
+    "rating": 4.9,
+    "brand": "PlayTime",
+    "availability": true
+  },
+  {
+    "id": "47",
+    "name": "Electric Guitar Starter Kit",
+    "description": "Full-size electric guitar bundled with an amplifier, strap, strings, and a carrying bag.",
+    "category": "Instruments",
+    "price": 189.99,
+    "rating": 4.4,
+    "brand": "SoundMax",
+    "availability": true
+  },
+  {
+    "id": "48",
+    "name": "Acoustic Concert Ukulele",
+    "description": "High-quality mahogany ukulele with a warm, rich tone. Excellent for beginners.",
+    "category": "Instruments",
+    "price": 65.50,
+    "rating": 4.6,
+    "brand": "SoundMax",
+    "availability": true
+  },
+  {
+    "id": "49",
+    "name": "Professional Chef's Knife",
+    "description": "8-inch high-carbon stainless steel knife with an ergonomic wooden handle.",
+    "category": "Home & Kitchen",
+    "price": 75.00,
+    "rating": 4.8,
+    "brand": "Culina",
+    "availability": true
+  },
+  {
+    "id": "50",
+    "name": "Bamboo Cutting Board Set",
+    "description": "Set of 3 eco-friendly bamboo cutting boards, double-sided with deep juice grooves.",
+    "category": "Home & Kitchen",
+    "price": 32.99,
+    "rating": 4.5,
+    "brand": "HomeHaven",
+    "availability": true
+  }
+]

@@ -1,0 +1,20 @@
+# Node / Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/*.local
+frontend/.env
+
+# Java / Backend / Maven
+backend/target/
+backend/*.class
+backend/*.jar
+backend/*.war
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+*.iml
+.DS_Store
+Thumbs.db
