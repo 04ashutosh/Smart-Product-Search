@@ -4,12 +4,12 @@ import ProductList from "./components/ProductList";
 import SidebarFilters from "./components/SidebarFilters";
 import { searchProducts, getAutoCompleteSuggestions } from "./api/searchApi";
 
-function App(){
-    const [products,setProducts] = useState([]);
-    const [suggestions,setSuggestions] = useState([]);
-    const [loading,setLoading] = useState(false);
+function App() {
+    const [products, setProducts] = useState([]);
+    const [suggestions, setSuggestions] = useState([]);
+    const [loading, setLoading] = useState(false);
     const [hasSearched, setHasSearched] = useState(false);
-    
+
     // Filter State
     const [filters, setFilters] = useState({
         category: [],
@@ -20,12 +20,12 @@ function App(){
         setHasSearched(true);
         setLoading(true);
 
-        try{
+        try {
             console.log(`Making request to Spring Boot API: GET /api/search?q=${query}`);
             const results = await searchProducts(query, 0, 20);
             setProducts(results || []);
-        }catch(error){
-            console.error("Search Failed:",error);
+        } catch (error) {
+            console.error("Search Failed:", error);
             setProducts([]);
         } finally {
             setLoading(false);
@@ -33,14 +33,14 @@ function App(){
     };
 
     const handleAutocomplete = async (prefix) => {
-        try{
+        try {
             const results = await getAutoCompleteSuggestions(prefix);
             const formatted = (results || []).map(p => ({
                 id: p.id,
                 name: p.name
             }));
             setSuggestions(formatted);
-        }catch(error){
+        } catch (error) {
             console.error("Autocomplete failed:", error);
             setSuggestions([]);
         }
@@ -63,16 +63,16 @@ function App(){
         }
     };
 
-    // Client-side filtering placeholder until the backend supports these extra query params
+    // Client-side filtering as a placeholder until the backend supports these extra query params
     const filteredProducts = products.filter(product => {
-        const matchesCategory = filters.category.length === 0 || 
+        const matchesCategory = filters.category.length === 0 ||
             (product.category && filters.category.includes(product.category.toLowerCase()));
         const matchesPrice = !product.price || product.price <= filters.maxPrice;
-        
+
         return matchesCategory && matchesPrice;
     });
 
-    return(
+    return (
         <div className="app-container">
             <header className="header">
                 <div style={{ display: 'flex', alignItems: 'center', gap: '2rem', width: '100%', maxWidth: '1200px' }}>
@@ -81,7 +81,7 @@ function App(){
                         <span>LuminaSearch</span>
                     </div>
                     <div className="search-container" style={{ flexGrow: 1 }}>
-                        <SearchBar 
+                        <SearchBar
                             onSearch={handleSearch}
                             onAutocomplete={handleAutocomplete}
                             suggestions={suggestions}
@@ -92,7 +92,7 @@ function App(){
 
             <main className="main-content">
                 {hasSearched && <SidebarFilters onFilterChange={handleFilterChange} />}
-                
+
                 <div style={{ flexGrow: 1 }}>
                     <ProductList products={filteredProducts} isLoading={loading} />
                 </div>
