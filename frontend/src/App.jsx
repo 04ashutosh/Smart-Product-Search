@@ -9,6 +9,7 @@ function App() {
     const [suggestions, setSuggestions] = useState([]);
     const [loading, setLoading] = useState(false);
     const [hasSearched, setHasSearched] = useState(false);
+    const [currentQuery, setCurrentQuery] = useState("");
 
     // Filter State
     const [filters, setFilters] = useState({
@@ -16,13 +17,30 @@ function App() {
         maxPrice: 1000
     });
 
+    React.useEffect(() => {
+        if (!hasSearched) return;
+        const fetchFiltered = async () => {
+            setLoading(true);
+            try {
+                const results = await searchProducts(currentQuery, filters.category, filters.maxPrice, 0, 20);
+                setProducts(results || []);
+            } catch (error) {
+                console.error("Filter Search Failed:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchFiltered();
+    }, [filters]);
+
     const handleSearch = async (query) => {
         setHasSearched(true);
+        setCurrentQuery(query);
         setLoading(true);
 
         try {
             console.log(`Making request to Spring Boot API: GET /api/search?q=${query}`);
-            const results = await searchProducts(query, 0, 20);
+            const results = await searchProducts(query, filters.category, filters.maxPrice, 0, 20);
             setProducts(results || []);
         } catch (error) {
             console.error("Search Failed:", error);
@@ -63,14 +81,7 @@ function App() {
         }
     };
 
-    // Client-side filtering as a placeholder until the backend supports these extra query params
-    const filteredProducts = products.filter(product => {
-        const matchesCategory = filters.category.length === 0 ||
-            (product.category && filters.category.includes(product.category.toLowerCase()));
-        const matchesPrice = !product.price || product.price <= filters.maxPrice;
 
-        return matchesCategory && matchesPrice;
-    });
 
     return (
         <div className="app-container">
@@ -94,7 +105,7 @@ function App() {
                 {hasSearched && <SidebarFilters onFilterChange={handleFilterChange} />}
 
                 <div style={{ flexGrow: 1 }}>
-                    <ProductList products={filteredProducts} isLoading={loading} />
+                    <ProductList products={products} isLoading={loading} />
                 </div>
             </main>
         </div>

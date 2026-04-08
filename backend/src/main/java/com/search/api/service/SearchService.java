@@ -1,3 +1,4 @@
+// backend/src/main/java/com/search/api/service/SearchService.java
 package com.search.api.service;
 
 import co.elastic.clients.elasticsearch._types.query_dsl.MatchQuery;
@@ -22,19 +23,41 @@ import java.util.stream.Collectors;
 public class SearchService {
     private final ElasticsearchOperations elasticsearchOperations;
 
-    public List<Product> searchProducts(String keyword,int page,int size){
-        //Multi-match query against name, brand, category, description
-        //Boosts matches found in name (^3) and brand (^2)
+    public List<Product> searchProducts(String keyword, List<String> categories, Double maxPrice, int page, int size){
+        co.elastic.clients.elasticsearch._types.query_dsl.BoolQuery.Builder boolBuilder =
+                new co.elastic.clients.elasticsearch._types.query_dsl.BoolQuery.Builder();
 
-        Query query = MultiMatchQuery.of(m->m
-                .query(keyword)
-                .fields("name^3","brand^2","category^2","description")
-                .type(TextQueryType.BestFields)
-                .fuzziness("AUTO") //Handles fuzzy  types seamlessly
-        )._toQuery();
+        // 1. Text Search (MultiMatch)
+        if (keyword != null && !keyword.trim().isEmpty()) {
+            boolBuilder.must(MultiMatchQuery.of(m->m
+                    .query(keyword)
+                    .fields("name^3","brand^2","category^2","description")
+                    .type(TextQueryType.BestFields)
+                    .fuzziness("AUTO")
+            )._toQuery());
+        }
+
+        // 2. Categories Filter (Should match at least one if provided)
+        if (categories != null && !categories.isEmpty()) {
+            co.elastic.clients.elasticsearch._types.query_dsl.BoolQuery.Builder categoryBool =
+                    new co.elastic.clients.elasticsearch._types.query_dsl.BoolQuery.Builder();
+            for (String category : categories) {
+                categoryBool.should(MatchQuery.of(m -> m.field("category").query(category))._toQuery());
+            }
+            categoryBool.minimumShouldMatch("1");
+            boolBuilder.filter(categoryBool.build()._toQuery());
+        }
+
+        // 3. Max Price Filter
+        if (maxPrice != null && maxPrice > 0) {
+            boolBuilder.filter(co.elastic.clients.elasticsearch._types.query_dsl.RangeQuery.of(r -> r
+                    .field("price")
+                    .lte(co.elastic.clients.json.JsonData.of(maxPrice))
+            )._toQuery());
+        }
 
         NativeQuery nativeQuery = new NativeQueryBuilder()
-                .withQuery(query)
+                .withQuery(boolBuilder.build()._toQuery())
                 .withPageable(PageRequest.of(page,size))
                 .build();
 
@@ -46,14 +69,13 @@ public class SearchService {
     }
 
     public List<Product> autocomplete(String prefix){
-        //Prefix match for autocomplete
         Query query = MatchQuery.of(m->m
                 .field("name")
                 .query(prefix))._toQuery();
 
         NativeQuery nativeQuery = new NativeQueryBuilder()
                 .withQuery(query)
-                .withPageable(PageRequest.of(0,5)) //Return top 5 suggestions
+                .withPageable(PageRequest.of(0,5))
                 .build();
 
         SearchHits<Product> searchHits = elasticsearchOperations.search(nativeQuery, Product.class);

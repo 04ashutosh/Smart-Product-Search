@@ -20,10 +20,12 @@ public class SearchController {
     @GetMapping
     public ResponseEntity<List<Product>> searchProducts(
             @RequestParam(required = false, defaultValue = "") String q,
+            @RequestParam(required = false) List<String> categories,
+            @RequestParam(required = false) Double maxPrice,
             @RequestParam(required = false, defaultValue = "0") int page,
             @RequestParam(required = false, defaultValue = "20") int size){
 
-        List<Product> results = searchService.searchProducts(q, page, size);
+        List<Product> results = searchService.searchProducts(q, categories, maxPrice, page, size);
         return ResponseEntity.ok(results);
     }
 

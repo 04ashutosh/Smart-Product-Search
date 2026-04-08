@@ -7,8 +7,15 @@ const apiClient = axios.create({
     headers: {'Content-Type':'application/json'}
 });
 
-export const searchProducts = async (query, page=0,size=20) => {
-    const response = await apiClient.get('/search', {params: {q:query, page, size}});
+export const searchProducts = async (query, categories = [], maxPrice = null, page = 0, size = 20) => {
+    const params = { q: query, page, size };
+    if (categories && categories.length > 0) {
+        params.categories = categories.join(',');
+    }
+    if (maxPrice !== null && maxPrice > 0) {
+        params.maxPrice = maxPrice;
+    }
+    const response = await apiClient.get('/search', { params });
     return response.data;
 };
 
